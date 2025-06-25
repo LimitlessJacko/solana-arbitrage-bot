@@ -1,0 +1,49 @@
+# Solana Arbitrage Bot Dependencies
+
+# Async HTTP client for API calls
+aiohttp==3.9.1
+aiofiles==23.2.1
+
+# Solana SDK (when available)
+# solana==0.30.2
+# anchorpy==0.18.0
+
+# Data handling and math
+numpy==1.24.3
+pandas==2.0.3
+
+# Logging and configuration
+python-dotenv==1.0.0
+pyyaml==6.0.1
+
+# Web3 and blockchain utilities
+web3==6.11.3
+requests==2.31.0
+
+# Async utilities
+asyncio-throttle==1.0.2
+
+# Testing (optional)
+pytest==7.4.3
+pytest-asyncio==0.21.1
+
+# Development tools (optional)
+black==23.9.1
+flake8==6.1.0
+mypy==1.6.1
+
+# Performance monitoring
+psutil==5.9.6
+
+# JSON handling
+orjson==3.9.9
+
+# Time utilities
+python-dateutil==2.8.2
+
+# Cryptography
+cryptography==41.0.7
+
+# HTTP client alternatives
+httpx==0.25.2
+

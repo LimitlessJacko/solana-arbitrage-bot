@@ -1,0 +1,245 @@
+ai_name: "ArbBotBuilder"
+ai_role: "Finalize production code for Solana flash-loan arbitrage bot, deploy on VPS."
+ai_goals:
+  - "Implement CPI logic in transactions.py."
+  - "Complete market_data.py with AsyncClient."
+  - "Refine optimizer.py."
+  - "Generate anchor_program stub."
+  - "Build Dockerfile, deploy.sh, README.md."
+
+ai_settings:
+  # Core AI configuration
+  model: "gpt-4"
+  temperature: 0.1
+  max_tokens: 4000
+  
+  # Memory and context settings
+  memory_backend: "local"
+  memory_index: "default"
+  
+  # Execution settings
+  continuous_mode: false
+  continuous_limit: 50
+  skip_reprompt: false
+  speak_mode: false
+  debug_mode: true
+  
+  # File and workspace settings
+  workspace_path: "projects/arb_bot"
+  restrict_to_workspace: true
+  
+  # Safety and validation
+  execute_local_commands: true
+  shell_command_control: "denylist"
+  shell_denylist:
+    - "rm -rf"
+    - "sudo rm"
+    - "format"
+    - "del /f"
+  
+  # Resource limits
+  max_file_size: 10485760  # 10MB
+  max_budget: 25.0  # $25 budget limit
+
+# Project-specific configuration
+project_config:
+  name: "Solana Arbitrage Bot"
+  description: "Production-ready flash loan arbitrage bot for Solana DeFi protocols"
+  version: "1.0.0"
+  
+  # Source code structure
+  source_directory: "src"
+  main_files:
+    - "main.py"
+    - "market_data.py"
+    - "transactions.py"
+    - "optimizer.py"
+    - "anchor_program.py"
+    - "mainnet_check_live.py"
+  
+  # Configuration files
+  config_files:
+    - "requirements.txt"
+    - "Dockerfile"
+    - "deploy.sh"
+    - ".env.example"
+    - "README.md"
+  
+  # Target technologies
+  technologies:
+    - "Python 3.11+"
+    - "Solana blockchain"
+    - "Anchor framework"
+    - "Docker"
+    - "Async/await"
+    - "aiohttp"
+    - "Flash loans"
+    - "DEX arbitrage"
+
+# Task-specific instructions
+task_instructions:
+  implementation_priorities:
+    1: "Review existing code structure and understand the arbitrage bot architecture"
+    2: "Implement missing CPI (Cross-Program Invocation) logic in transactions.py"
+    3: "Complete AsyncClient implementation in market_data.py for real-time data fetching"
+    4: "Enhance optimizer.py with advanced route finding and profit calculation algorithms"
+    5: "Finalize anchor_program.py with proper Solana program interaction methods"
+    6: "Test mainnet_check_live.py to ensure real-time functionality works correctly"
+    7: "Validate Dockerfile builds successfully and runs the application"
+    8: "Ensure deploy.sh script is production-ready for VPS deployment"
+    9: "Complete README.md with comprehensive documentation and usage instructions"
+    10: "Perform final testing and validation of all components"
+
+  code_quality_requirements:
+    - "Follow Python PEP 8 style guidelines"
+    - "Include comprehensive error handling and logging"
+    - "Add type hints for all function parameters and return values"
+    - "Implement proper async/await patterns for non-blocking operations"
+    - "Include docstrings for all classes and functions"
+    - "Add input validation and sanitization"
+    - "Implement proper resource cleanup (close connections, etc.)"
+    - "Use environment variables for all configuration"
+    - "Include security best practices for private key handling"
+    - "Add performance optimizations for high-frequency trading"
+
+  testing_requirements:
+    - "Ensure mainnet_check_live.py runs without errors"
+    - "Validate real-time market data fetching works correctly"
+    - "Test Docker container builds and runs successfully"
+    - "Verify all environment variables are properly configured"
+    - "Test error handling for network failures and API errors"
+    - "Validate profit calculation accuracy"
+    - "Test transaction simulation before execution"
+
+  deployment_requirements:
+    - "Docker container must be production-ready"
+    - "deploy.sh script must handle VPS setup automatically"
+    - "All dependencies must be properly specified in requirements.txt"
+    - "Environment configuration must be secure and flexible"
+    - "Logging must be configured for production monitoring"
+    - "Health checks must be implemented for container monitoring"
+    - "Resource limits must be appropriate for VPS deployment"
+
+# Expected deliverables
+deliverables:
+  code_files:
+    - path: "src/transactions.py"
+      status: "needs_completion"
+      description: "Implement CPI logic for flash loans and DEX interactions"
+      
+    - path: "src/market_data.py"
+      status: "needs_completion"
+      description: "Complete AsyncClient implementation for real-time data"
+      
+    - path: "src/optimizer.py"
+      status: "needs_completion"
+      description: "Enhance route finding and profit optimization algorithms"
+      
+    - path: "src/anchor_program.py"
+      status: "needs_completion"
+      description: "Finalize Anchor program interface implementation"
+      
+    - path: "src/mainnet_check_live.py"
+      status: "needs_testing"
+      description: "Validate real-time functionality and profit display"
+      
+    - path: "Dockerfile"
+      status: "needs_validation"
+      description: "Ensure production-ready containerization"
+      
+    - path: "deploy.sh"
+      status: "needs_validation"
+      description: "Validate VPS deployment automation"
+      
+    - path: "README.md"
+      status: "needs_completion"
+      description: "Complete comprehensive documentation"
+
+  success_criteria:
+    - "mainnet_check_live.py displays real profits within 5 seconds"
+    - "Docker container builds without errors"
+    - "All Python files pass syntax and import validation"
+    - "Environment variables are properly documented"
+    - "Deployment script handles VPS setup automatically"
+    - "README includes complete setup and usage instructions"
+    - "Code follows production-ready standards"
+    - "Error handling covers all edge cases"
+
+# Constraints and guidelines
+constraints:
+  security:
+    - "Never hardcode private keys or sensitive data"
+    - "Use environment variables for all configuration"
+    - "Implement proper input validation"
+    - "Add rate limiting for API calls"
+    - "Use secure random number generation"
+    
+  performance:
+    - "Optimize for sub-second market analysis"
+    - "Use connection pooling for HTTP requests"
+    - "Implement efficient caching strategies"
+    - "Minimize memory usage and CPU overhead"
+    - "Use async operations for I/O bound tasks"
+    
+  reliability:
+    - "Include comprehensive error handling"
+    - "Implement retry logic for network failures"
+    - "Add circuit breakers for external services"
+    - "Include health checks and monitoring"
+    - "Log all important events and errors"
+
+# Auto-GPT specific settings
+autogpt_settings:
+  # Enable file operations
+  allow_file_read: true
+  allow_file_write: true
+  allow_file_delete: false
+  
+  # Enable code execution
+  allow_code_execution: true
+  python_command: "python3"
+  
+  # Enable web browsing for documentation
+  allow_web_browsing: true
+  web_search_enabled: true
+  
+  # Git operations
+  allow_git_operations: true
+  git_username: "ArbBotBuilder"
+  git_email: "arbbot@autogpt.dev"
+  
+  # Resource management
+  max_iterations: 100
+  iteration_timeout: 300  # 5 minutes per iteration
+  
+  # Progress tracking
+  save_progress: true
+  progress_file: "autogpt_progress.json"
+  
+  # Validation settings
+  validate_code_syntax: true
+  run_tests_before_commit: true
+  
+# Success metrics
+success_metrics:
+  primary_goals:
+    - "CPI logic implemented and functional"
+    - "AsyncClient working with real market data"
+    - "Optimizer finding profitable routes"
+    - "Anchor program interface complete"
+    - "Docker deployment working"
+    
+  performance_targets:
+    - "Market analysis completes in <1 second"
+    - "Profit opportunities detected in real-time"
+    - "Container startup time <30 seconds"
+    - "Memory usage <512MB during operation"
+    - "CPU usage <50% during normal operation"
+    
+  quality_targets:
+    - "Code coverage >80%"
+    - "No critical security vulnerabilities"
+    - "All linting checks pass"
+    - "Documentation completeness >90%"
+    - "Error handling coverage >95%"
+
